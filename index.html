@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Chess: Math Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arena">
+        <!-- Header Info -->
+        <div class="battle-header">
+            <h2>Ronde: <span id="round-num">1</span> / 11</h2>
+            <h1 class="vs-title">BATTLE ARENA</h1>
+        </div>
+
+        <!-- Papan Skor dan Nyawa -->
+        <div class="scoreboard">
+            <div class="player-info p1-color">
+                <h3>Monster Biru (P1)</h3>
+                <p>Skor: <span id="p1-score">0</span></p>
+                <p class="controls">Tombol: A, S, D, F</p>
+            </div>
+            <div class="player-info p2-color">
+                <h3>Monster Merah (P2)</h3>
+                <p>Skor: <span id="p2-score">0</span></p>
+                <p class="controls">Tombol: H, J, K, L</p>
+            </div>
+        </div>
+
+        <!-- Area Pertempuran Monster -->
+        <div class="battleground">
+            <!-- Monster 1 (Kiri) -->
+            <div class="monster-wrapper">
+                <div id="monster1" class="monster P1">
+                    <div class="monster-eye"></div>
+                    <div class="monster-weapon">⚔️</div>
+                </div>
+            </div>
+
+            <!-- Efek Serangan di Tengah -->
+            <div id="hit-effect" class="hit-effect hidden">💥</div>
+
+            <!-- Monster 2 (Kanan) -->
+            <div class="monster-wrapper">
+                <div id="monster2" class="monster P2">
+                    <div class="monster-eye"></div>
+                    <div class="monster-weapon">⚔️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box Soal di Tengah -->
+        <div class="question-container">
+            <div id="question-box">READY?</div>
+        </div>
+
+        <!-- Tombol Jawaban untuk Kedua Pemain -->
+        <div class="controls-container">
+            <!-- Pilihan P1 (Kiri) -->
+            <div class="options-side">
+                <h4>Pilihan Jawaban P1</h4>
+                <div class="options-grid">
+                    <button class="btn-p1" id="p1-opt0">A</button>
+                    <button class="btn-p1" id="p1-opt1">S</button>
+                    <button class="btn-p1" id="p1-opt2">D</button>
+                    <button class="btn-p1" id="p1-opt3">F</button>
+                </div>
+            </div>
+
+            <!-- Pilihan P2 (Kanan) -->
+            <div class="options-side">
+                <h4>Pilihan Jawaban P2</h4>
+                <div class="options-grid">
+                    <button class="btn-p2" id="p2-opt0">H</button>
+                    <button class="btn-p2" id="p2-opt1">J</button>
+                    <button class="btn-p2" id="p2-opt2">K</button>
+                    <button class="btn-p2" id="p2-opt3">L</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layar Akhir Game Over -->
+    <div id="game-over-screen" class="modal hidden">
+        <div class="modal-content">
+            <h2>Pertempuran Selesai! 🏆</h2>
+            <h1 id="winner-text">Monster X Menang!</h1>
+            <div class="final-scores">
+                <p>Skor Akhir Monster Biru: <strong id="final-p1">0</strong></p>
+                <p>Skor Akhir Monster Merah: <strong id="final-p2">0</strong></p>
+            </div>
+            <button onclick="resetGame()">Tanding Ulang</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
